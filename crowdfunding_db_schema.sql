@@ -2,33 +2,33 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "Categories" (
+CREATE TABLE "category" (
     "category_id" VARCHAR   NOT NULL,
     "categoy" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_Categories" PRIMARY KEY (
+    CONSTRAINT "pk_category" PRIMARY KEY (
         "category_id"
      )
 );
 
-CREATE TABLE "Subcategories" (
+CREATE TABLE "subcategory" (
     "subcategory_id" VARCHAR   NOT NULL,
     "subcategory" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_Subcategories" PRIMARY KEY (
+    CONSTRAINT "pk_subcategory" PRIMARY KEY (
         "subcategory_id"
      )
 );
 
-CREATE TABLE "Contacts" (
+CREATE TABLE "contacts" (
     "contact_id" INT   NOT NULL,
     "first_name" VARCHAR   NOT NULL,
     "last_name" VARCHAR   NOT NULL,
     "email" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_Contacts" PRIMARY KEY (
+    CONSTRAINT "pk_contacts" PRIMARY KEY (
         "contact_id"
      )
 );
 
-CREATE TABLE "Campaigns" (
+CREATE TABLE "campaign" (
     "cf_id" INT   NOT NULL,
     "contact_id" INT   NOT NULL,
     "company_name" VARCHAR   NOT NULL,
@@ -43,17 +43,17 @@ CREATE TABLE "Campaigns" (
     "end_date" DATE   NOT NULL,
     "category_id" VARCHAR   NOT NULL,
     "subcategory_id" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_Campaigns" PRIMARY KEY (
+    CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
 );
 
-ALTER TABLE "Campaigns" ADD CONSTRAINT "fk_Campaigns_contact_id" FOREIGN KEY("contact_id")
-REFERENCES "Contacts" ("contact_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_contact_id" FOREIGN KEY("contact_id")
+REFERENCES "contacts" ("contact_id");
 
-ALTER TABLE "Campaigns" ADD CONSTRAINT "fk_Campaigns_category_id" FOREIGN KEY("category_id")
-REFERENCES "Categories" ("category_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_category_id" FOREIGN KEY("category_id")
+REFERENCES "category" ("category_id");
 
-ALTER TABLE "Campaigns" ADD CONSTRAINT "fk_Campaigns_subcategory_id" FOREIGN KEY("subcategory_id")
-REFERENCES "Subcategories" ("subcategory_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
+REFERENCES "subcategory" ("subcategory_id");
 
