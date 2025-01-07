@@ -5,7 +5,7 @@ This project demonstrates the ETL (Extract, Transform, Load) process. Using Pyth
 ## Relevant Files
 + ETL_Mini_Project_DBurke_HRichardson.ipynb *(Jupyter Notebook for cleaning Excel data and exporting to CSV)*
 + ERD.png *(PNG image of the desinged Entity Relationship Diagram for the database)*
-+ schema.sql *(PostgreSQL database schema)*
++ crowdfunding_db_schema.sql *(PostgreSQL database schema)*
 + confirmation_query.sql *(SQL file containing statements confirming the creation of the database and importing of data for all tables)*
 + Resources/campaign.csv *(CSV file containing cleaned campaign data for database import)*
 + Resources/category.csv *(CSV file containing cleaned category data for database import)*
